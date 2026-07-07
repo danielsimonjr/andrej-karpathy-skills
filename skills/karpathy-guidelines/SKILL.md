@@ -1,6 +1,6 @@
 ---
 name: karpathy-guidelines
-description: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.
+description: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria. Includes a Carmack addendum on profiling before optimizing and simplifying performance-critical code.
 license: MIT
 ---
 
@@ -65,3 +65,17 @@ For multi-step tasks, state a brief plan:
 ```
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
+
+## Carmack addendum — measure, then simplify
+
+Complementary to the four guidelines above, drawn from John Carmack's engineering philosophy. Both sets fire on the same coding/refactor/perf tasks: Karpathy's guidelines govern *how* you approach the change; this addendum governs *what good looks like* once performance or low-level correctness is in play.
+
+**Understand the system before touching it.** Cache behavior, pipelines, and memory/data layout determine real-world performance far more than intuition. Question "best practices" that haven't been measured in your actual context — cargo cult conventions are common and often wrong.
+
+**Simplify relentlessly.** Every line is a liability. Write concrete, direct code first; add abstraction only after duplication is proven harmful (2-3 real variants), not for imagined future flexibility. Prefer explicit state over deep hierarchies and indirection.
+
+**Measure, don't guess.** Never optimize before profiling. Roughly 90% of runtime lives in 10% of the code — find that 10% with real data, optimize it hard, and keep the other 90% clean and readable rather than "optimized" on speculation.
+
+**Workflow for perf-sensitive work:** make it work (correct algorithm) → make it right (clean it up) → profile (find real bottlenecks) → optimize the hot path → verify correctness held → measure again to confirm the win.
+
+**Failure modes to catch in review:** optimizing without profiling first; over-abstracting "for flexibility"; ignoring cache/data-layout effects (prefer structure-of-arrays over array-of-structures when loops touch few fields); premature SIMD/vectorization before the algorithm and layout are settled; complex error handling inside hot loops instead of validating at boundaries.
