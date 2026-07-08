@@ -16,7 +16,7 @@ This project includes a **Cursor project rule** so the Karpathy-inspired behavio
 
 ## Optional: personal Agent Skills
 
-If you want the same content as a reusable skill under `~/.cursor/skills`, use [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md). You can copy or symlink it into your personal skills directory; use whatever layout you use for other skills.
+If you want the same content as a reusable skill under `~/.cursor/skills`, use [`skills/engineering/SKILL.md`](skills/engineering/SKILL.md) — it now also includes the Carmack addendum and a systematic refactoring process alongside the four Karpathy guidelines. You can copy or symlink it into your personal skills directory; use whatever layout you use for other skills.
 
 ## Claude Code vs Cursor
 
@@ -25,4 +25,4 @@ If you want the same content as a reusable skill under `~/.cursor/skills`, use [
 
 ## For contributors
 
-When you change the four principles, keep **[`CLAUDE.md`](CLAUDE.md)** and **[`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc)** in sync. If the published skill/plugin text should match, update **[`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md)** as well.
+When you change the four principles, keep **[`CLAUDE.md`](CLAUDE.md)** and **[`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc)** in sync. If the published skill/plugin text should match, update **[`skills/engineering/SKILL.md`](skills/engineering/SKILL.md)** as well (which also carries the Carmack addendum and the refactoring section).

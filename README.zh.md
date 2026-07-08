@@ -129,6 +129,13 @@ curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/
 
 本仓库包含一个已提交的 Cursor 项目规则 ([`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc))，因此在 Cursor 中打开项目时同样适用这些指南。详情请参见 **[CURSOR.md](CURSOR.md)**，包括如何在其他项目中使用该规则，以及它与 Claude Code 的关系。
 
+## 同时涵盖：Carmack 补充原则 + 重构
+
+除了上述四个原则之外，随 Claude Code 插件提供的 `engineering` 技能 (`skills/engineering/SKILL.md`) 还包括：
+
+- **Carmack 补充原则** —— 先测量再优化，在改动系统前先理解它，彻底简化。为性能敏感和底层工作补充了这四个原则。
+- **系统化的重构流程** —— 代码异味速查表、安全优先的三阶段流程（理解 → 先应用最安全的改动 → 每次改动后验证），以及一份检查清单，适用于需要重构代码、清理长函数、减少嵌套、消除重复、拆分 God 类，或现代化遗留代码的场景。
+
 ## 核心洞察
 
 来自 Andrej：

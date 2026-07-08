@@ -129,6 +129,13 @@ curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/
 
 This repository includes a committed Cursor project rule ([`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc)) so the same guidelines apply when you open the project in Cursor. See **[CURSOR.md](CURSOR.md)** for setup, using the rule in other projects, and how this relates to Claude Code.
 
+## Also Covered: Carmack Addendum + Refactoring
+
+Beyond the four principles above, the `engineering` skill (`skills/engineering/SKILL.md`) that ships with the Claude Code plugin also includes:
+
+- **A Carmack addendum** — measure before optimizing, understand the system before touching it, simplify relentlessly. Complements the four principles for performance-sensitive and low-level work.
+- **A systematic refactoring process** — a code-smells quick reference, a safest-first three-phase process (understand → apply safest-first → verify after every change), and a checklist, for when you're asked to refactor code, clean up long functions, reduce nesting, remove duplication, break apart god classes, or modernize legacy code.
+
 ## Key Insight
 
 From Andrej:
