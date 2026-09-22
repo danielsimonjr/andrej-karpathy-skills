@@ -1,7 +1,7 @@
 {
   "name": "andrej-karpathy-skills",
   "description": "Behavioral guidelines to reduce common LLM coding mistakes, derived from Andrej Karpathy's observations on LLM coding pitfalls, plus a Carmack addendum on measuring before optimizing and a systematic refactoring process",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": {
     "name": "forrestchang"
   },

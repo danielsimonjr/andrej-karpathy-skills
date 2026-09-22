@@ -32,6 +32,13 @@ Before implementing:
 
 Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
 
+> **Scope boundary.** This guideline simplifies code that should exist. It does not ask
+> whether it should exist. When the answer to "why is this here at all?" is unknown, or the
+> target is a process rather than code, use `musk-algorithm` first — it questions the
+> requirement and deletes, which are the two steps *before* simplifying. Simplifying a thing
+> that should not exist is the more expensive mistake, because the work feels productive and
+> leaves the thing harder to remove.
+
 ## 3. Surgical Changes
 
 **Touch only what you must. Clean up only your own mess.**
@@ -74,7 +81,7 @@ Complementary to the four guidelines above, drawn from John Carmack's engineerin
 
 **Simplify relentlessly.** Every line is a liability. Write concrete, direct code first; add abstraction only after duplication is proven harmful (2-3 real variants), not for imagined future flexibility. Prefer explicit state over deep hierarchies and indirection.
 
-**Measure, don't guess.** Never optimize before profiling. Roughly 90% of runtime lives in 10% of the code — find that 10% with real data, optimize it hard, and keep the other 90% clean and readable rather than "optimized" on speculation.
+**Measure, don't guess.** Never optimize before profiling — and before profiling, be sure the code should exist at all (`musk-algorithm`); a profile tells you WHERE the time goes, never WHETHER the work is needed. Roughly 90% of runtime lives in 10% of the code — find that 10% with real data, optimize it hard, and keep the other 90% clean and readable rather than "optimized" on speculation.
 
 **Workflow for perf-sensitive work:** make it work (correct algorithm) → make it right (clean it up) → profile (find real bottlenecks) → optimize the hot path → verify correctness held → measure again to confirm the win.
 
